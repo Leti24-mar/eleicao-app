@@ -1,0 +1,7 @@
+{
+  "usuarios": [
+    { "id": 1, "nome": "Chefe", "login": "chefe", "senha": "123", "perfil": "CHEFE" },
+    { "id": 2, "nome": "Eleitor", "login": "eleitor", "senha": "123", "perfil": "ELEITOR" },
+    { "id": 3, "nome": "Candidato", "login": "cand", "senha": "123", "perfil": "CANDIDATO" }
+  ]
+}

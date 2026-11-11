@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Página de Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="max-width: 400px; margin: 40px auto;">
+    
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <!-- login  -->
+      <ion-input [(ngModel)]="login" placeholder="Digite seu login"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <!-- senha  -->
+      <ion-input type="password" [(ngModel)]="senha" placeholder="Digite sua senha"></ion-input>
+    </ion-item>
+
+    
+    <div *ngIf="erro" style="color: red; margin-top: 10px; font-size: 14px; text-align: center;">
+      {{ erro }}
+    </div>
+
+    
+    <ion-button expand="block" class="ion-margin-top" (click)="entrar()" [disabled]="carregando">
+      {{ carregando ? 'Entrando...' : 'Entrar' }}
+    </ion-button>
+  </div>
+</ion-content>
