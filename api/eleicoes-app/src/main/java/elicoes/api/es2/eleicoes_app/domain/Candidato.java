@@ -21,19 +21,22 @@ public class Candidato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "eleicao_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "eleicao_id", nullable = false)
     private Eleicao eleicao;
 
+    @Column(nullable = false, length = 5)
     private String numero;
 
+    @Column(nullable = false, length = 80)
     private String partido;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 30)
     private TipoCandidato tipo;
 
 }
